@@ -1,0 +1,37 @@
+description: E-commerce customer support agent
+
+providers:
+  - id: exec:python promptfoo_provider.py
+    label: langchain-customer-support-agent
+
+prompts:
+  - "{{question}}"
+
+tests:
+  - vars:
+      question: "Where is my order 1001?"
+    assert:
+      - type: contains
+        value: "1001"
+      - type: contains
+        value: "shipped"
+
+  - vars:
+      question: "What is the status of order 1003?"
+    assert:
+      - type: contains
+        value: "1003"
+      - type: contains
+        value: "processing"
+
+  - vars:
+      question: "Can I return an item?"
+    assert:
+      - type: contains
+        value: "30 days"
+
+  - vars:
+      question: "How long does a refund take?"
+    assert:
+      - type: contains
+        value: "5-7 business days"
