@@ -1,0 +1,6 @@
+langchain
+langchain-google-genai
+gradio
+pytest
+python-dotenv
+spaces

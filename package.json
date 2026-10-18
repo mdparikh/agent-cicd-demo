@@ -1,0 +1,7 @@
+{
+  "name": "agent-cicd-demo",
+  "private": true,
+  "devDependencies": {
+    "promptfoo": "latest"
+  }
+}
